@@ -15,6 +15,16 @@ class itemSerializer(serializers.ModelSerializer):
         ]
         model = models.Item
 
+class imageProductSerializer(serializers.ModelSerializer):
+    class Meta:
+        fields = [
+        'product_id',
+        'image'
+        ]
+        model = models.imageProduct
+
+
+
 class userSerializer(serializers.ModelSerializer):
     class Meta:
         fields=[
@@ -34,21 +44,17 @@ class userSerializer(serializers.ModelSerializer):
         ]
         model = models.userProfil
 
-class messageSerializer(serializers.ModelSerializer):
-    class Meta:
-        fields = [
-        'ID',
-        'Sender',
-        'Receiver',
-        'Content',
-        'Type',
-        'Date',
-        ]
-        model = models.Message
-
-
-
-
+# class messageSerializer(serializers.ModelSerializer):
+#     class Meta:
+#         fields = [
+#         'ID',
+#         'Sender',
+#         'Receiver',
+#         'Content',
+#         'Type',
+#         'Date',
+#         ]
+#         model = models.Message
 
 
 

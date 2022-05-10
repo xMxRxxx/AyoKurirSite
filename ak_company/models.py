@@ -54,8 +54,8 @@ class userProfil(models.Model):
 
 class Message(models.Model): # many-to-many intermediate table
     ID = models.AutoField(primary_key=True) #This is an auto-incrementing primary key.
-    Sender = models.OneToOneField(userProfil, on_delete = models.CASCADE, null=False, related_name="ofMessageUser")
-    Receiver = models.OneToOneField(userProfil, on_delete = models.CASCADE, null=False, related_name="toMessageUser")
+    Sender = models.ForeignKey(userProfil, on_delete = models.CASCADE, null=False, related_name="ofMessageUser")
+    Receiver = models.ForeignKey(userProfil, on_delete = models.CASCADE, null=False, related_name="toMessageUser")
     # IdentifierNumber = models.IntegerField() #unique for all user
     Content=models.CharField(null=False, max_length=4096,) #Like Telegram limit
     CONTENT_TYPE_CHOICES = ( 
@@ -103,6 +103,12 @@ class imageProduct(models.Model):
     product_id = models.ForeignKey(Item,
                              on_delete=models.CASCADE) 
     image = models.ImageField(upload_to="images/product/")
+    image1 = models.ImageField(upload_to="images/product/")
+    image2 = models.ImageField(upload_to="images/product/")
+    image3 = models.ImageField(upload_to="images/product/")
+    image4 = models.ImageField(upload_to="images/product/")
+    image5 = models.ImageField(upload_to="images/product/")
+    
 
 class favorit(models.Model):
     # user_id = models.ForeignKey(userProfil,on_delete=models.CASCADE)
