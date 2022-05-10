@@ -19,7 +19,13 @@ class imageProductSerializer(serializers.ModelSerializer):
     class Meta:
         fields = [
         'product_id',
-        'image'
+        'image',
+        'image1',
+        'image2',
+        'image3',
+        'image4',
+        'image5',
+
         ]
         model = models.imageProduct
 
